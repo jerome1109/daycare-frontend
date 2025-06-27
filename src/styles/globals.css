@@ -1,0 +1,78 @@
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+
+  /* Mobile calendar styles */
+  .mobile-calendar {
+    --fc-border-color: theme("colors.gray.200");
+    --fc-today-bg-color: theme("colors.sky.50");
+    --fc-event-bg-color: theme("colors.sky.600");
+    --fc-event-border-color: theme("colors.sky.600");
+    --fc-event-text-color: theme("colors.white");
+    --fc-page-bg-color: theme("colors.white");
+  }
+
+  .mobile-calendar .fc-timegrid-slot {
+    height: 3rem !important;
+  }
+
+  .mobile-calendar .fc-timegrid-slot-label {
+    font-size: 0.875rem;
+  }
+
+  .mobile-calendar .fc-event {
+    border-radius: theme("borderRadius.md");
+    padding: 2px 4px;
+    margin: 1px 0;
+  }
+
+  .mobile-calendar .fc-toolbar-title {
+    font-size: 1.125rem !important;
+  }
+
+  .mobile-calendar .fc-header-toolbar {
+    margin-bottom: 0.75rem !important;
+    padding: 0.5rem;
+  }
+
+  .mobile-calendar .fc-button {
+    padding: 0.375rem 0.75rem !important;
+    font-size: 0.875rem !important;
+  }
+
+  /* Mobile calendar optimizations */
+  @media (max-width: 640px) {
+    .fc-toolbar-title {
+      font-size: 1.125rem !important;
+    }
+
+    .fc-timegrid-slot {
+      height: 3rem !important;
+    }
+
+    .fc-timegrid-slot-label {
+      font-size: 0.875rem;
+    }
+
+    .fc-event {
+      padding: 2px 4px;
+      margin: 1px 0;
+    }
+
+    .fc-header-toolbar {
+      margin-bottom: 0.75rem !important;
+      padding: 0.5rem;
+    }
+
+    .fc-button {
+      padding: 0.375rem 0.75rem !important;
+      font-size: 0.875rem !important;
+    }
+  }
+}
