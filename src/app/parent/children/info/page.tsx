@@ -1,7 +1,7 @@
 "use client";
 
 import { useAuth } from "@/contexts/AuthContext";
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -326,7 +326,7 @@ function PersonalInformation({ child }: { child: ChildDetails["child"] }) {
   );
 }
 
-export default function ChildDetails() {
+function ChildDetailsContent() {
   const { token, isLoading: authLoading, makeAuthenticatedRequest } = useAuth();
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -1206,6 +1206,14 @@ export default function ChildDetails() {
         </DialogContent>
       </Dialog>
     </div>
+  );
+}
+
+export default function ChildDetailsPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ChildDetailsContent />
+    </Suspense>
   );
 }
 

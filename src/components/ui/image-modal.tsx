@@ -48,7 +48,12 @@ export function ImageModal({
         {/* Header */}
         <div className="px-6 py-4 border-b flex items-center justify-between">
           <h2 className="text-xl font-semibold">{title}</h2>
-          <Button variant="ghost" size="icon" onClick={onClose}>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={onClose}
+            aria-label="Close"
+          >
             <X className="h-5 w-5" />
           </Button>
         </div>
@@ -119,6 +124,7 @@ export function ImageModal({
                   disabled={
                     images.findIndex((img) => img.id === selectedImage.id) === 0
                   }
+                  aria-label="Previous image"
                 >
                   <ArrowLeft className="h-6 w-6" />
                 </Button>
@@ -139,6 +145,7 @@ export function ImageModal({
                     images.findIndex((img) => img.id === selectedImage.id) ===
                     images.length - 1
                   }
+                  aria-label="Next image"
                 >
                   <ArrowRight className="h-6 w-6" />
                 </Button>

@@ -639,9 +639,7 @@ export default function TopNavBar({ onSidebarToggle }: TopNavBarProps) {
                   className="w-full flex items-center justify-center gap-2 text-sky-700 px-2 sm:px-4 py-1 sm:py-2 text-sm sm:text-base"
                   onClick={() => setIsEditProfileOpen(true)}
                 >
-                  <span className={isSmallScreen ? "hidden" : "inline"}>
-                    Edit Profile
-                  </span>
+                  <span>Profile</span>
                 </Button>
               </div>
             </div>

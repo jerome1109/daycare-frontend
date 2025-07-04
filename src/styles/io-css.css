@@ -1,0 +1,42 @@
+/* Minimal, targeted compatibility fixes for iOS/Safari/Edge/Chrome/Firefox */
+
+/* Text size adjust for all browsers */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Backdrop filter for overlays */
+[data-nextjs-dialog-backdrop],
+.backdrop-blur {
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+/* Mask image for Edge/Chrome/Safari */
+.mask-gradient,
+[data-nextjs-container-errors-pseudo-html-collapse="true"]
+  .nextjs__container_errors__component-stack
+  code {
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    black 10%
+  );
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, black 10%);
+}
+
+/* User select none for Safari */
+.noselect,
+[data-sonner-toast][data-swiped="true"] {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* iOS Fullscreen fix for fixed panels/drawers */
+.ios-fullscreen {
+  height: 100vh !important;
+  min-height: 100vh !important;
+}
+
+/* Usage: Add 'ios-fullscreen' to your fixed panel/div along with Tailwind classes */
